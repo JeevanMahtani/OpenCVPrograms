@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/jeevan/threshold/threshold.cpp
+opencv2/imgproc/imgproc.hpp
+/home/jeevan/threshold/opencv2/imgproc/imgproc.hpp
+opencv2/highgui/highgui.hpp
+/home/jeevan/threshold/opencv2/highgui/highgui.hpp
+stdlib.h
+-
+stdio.h
+-
+

@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 2.8)
+project( rgbpixels )
+find_package( OpenCV REQUIRED )
+include_directories(${OpenCV_INCLUDE_DIRS} )
+add_executable( rgbpixels rgbpixels.cpp )
+target_link_libraries(rgbpixels ${OpenCV_LIBS} )

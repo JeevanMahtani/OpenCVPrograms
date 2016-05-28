@@ -1,0 +1,76 @@
+#include "opencv2/core/core.hpp"
+#include "opencv2/highgui/highgui.hpp"
+#include "opencv2/imgproc/imgproc.hpp"
+#include "opencv2/opencv.hpp"
+#include <stdio.h>
+
+
+using namespace cv;
+//using namespace std;
+
+int val;
+
+int main(int argc, char** argv )
+ {
+  
+   if( argc !=2)
+   {
+    printf( " No image data\n " );
+    return -1;
+   }
+  Mat image;
+  image = imread( argv[1], 1);
+  namedWindow("Original Image", CV_WINDOW_AUTOSIZE);
+  imshow( " Original Image", image);
+ 
+  //SPLIT INTO RGB COLOURS
+   // vector<Mat> BGR;
+   // split(image,BGR);
+
+  // namedWindow("blue", CV_WINDOW_FREERATIO);
+  // namedWindow("green",CV_WINDOW_FREERATIO);
+  // namedWindow("red", CV_WINDOW_FREERATIO);
+  
+  // imshow("blue", BGR[0]);
+  // imshow("green", BGR[1]);
+  // imshow("red", BGR[2]);
+
+
+//   Mat imageTwo;
+   //imageTwo = imread(argv[2], 1);
+
+  //CONVERT TO GREY
+
+  Mat grey;
+  cvtColor(image, grey, CV_BGR2GRAY);
+  namedWindow("Gray Image", CV_WINDOW_AUTOSIZE);
+  imshow( "Gray Image", grey);
+
+ // Mat greyTwo;
+ // cvtColor(imageTwo,greyTwo, CV_BGR2GRAY);
+//  namedWindow("2nd Gray Image", CV_WINDOW_AUTOSIZE);
+  //imshow( "2nd Gray Image", greyTwo);
+
+printf("Greyscale Channel is %d\n", grey.channels()); 
+printf(" Image Channel is %d\n ", image.channels());
+ //printf("2nd Original Image Channels is %d\n", greyTwo.channels());  
+
+//GET EACH PIXEL VALUE
+ for( int i = 0; i <= grey.rows; i++) {
+   for (int j = 0; j <= grey.cols; j++) {
+
+     //val= image.at<uchar>(i,j);
+   val += grey.at<uchar>(i,j);
+   
+  
+  
+    }
+ 
+  }
+
+   printf( "Val is %d\n", val);
+   //printf( "Val is %d\n", val);
+ 
+waitKey();
+   return 0;
+}

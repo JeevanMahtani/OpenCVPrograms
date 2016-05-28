@@ -1,0 +1,59 @@
+#include <opencv2/opencv.hpp>
+#include <stdio.h>
+using namespace cv;
+
+int main(int argc, char** argv )
+ {
+
+  if( argc !=3 )
+   {
+    printf( "<No image data>\n " );
+    return -1;
+
+   }
+  
+ char* imageOne = argv[1];
+ char* imageTwo = argv[2];
+
+ int pixelOne;
+ int pixelTwo;
+ int pixeldifference;
+ int nodifference = 0;
+ Mat image;
+ Mat imagetwo;
+
+ image = imread( imageOne, 1);
+ imagetwo = imread( imageTwo, 1);
+
+ pixelOne = image.total();
+ pixelTwo = imagetwo.total(); 
+
+ if (pixelOne > pixelTwo)
+  {
+   //pixeldifference = pixelOne - pixelTwo;
+  }
+ else if (pixelOne < pixelTwo)
+  {
+   pixeldifference = pixelTwo - pixelOne;
+  } 
+ else if (pixelOne == pixelTwo)
+  {
+   pixeldifference = 0;
+  }
+
+
+ printf("Total number of pixels in %s: %d\n", imageOne, pixelOne);
+ printf("Total number of pixels in %s: %d\n", imageTwo, pixelTwo);
+ printf("Number of pixel differences between %s and %s: %d\n", imageOne, imageTwo, pixeldifference);
+
+ namedWindow( imageOne, WINDOW_FREERATIO );
+ namedWindow( imageTwo, WINDOW_FREERATIO );
+
+ imshow( imageOne, image );
+ imshow( imageTwo, imagetwo );
+
+  waitKey(0);
+
+  return 0;
+
+}
