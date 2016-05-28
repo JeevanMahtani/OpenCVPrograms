@@ -16,6 +16,14 @@ The list below gives a summary of each program:
 
 • **rgbpixels** - Gets the individual pixel values of two RGB colour images and computes the sum difference of pixel values between the two images
 
+## Prerequisites
+
+• Ubuntu 14.04.4
+
+• OpenCV 3.1
+
+• CMake 2.8+
+
 
 
 
