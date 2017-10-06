@@ -1,6 +1,6 @@
 # OpenCVPrograms
 
-The following programs were developed as part of a research learning project for RMIT University to understand how OpenCV libraries work and how it can be used in creating non-photorealistic rendering software.
+The following programs were developed as part of a final year project for RMIT University to understand how OpenCV libraries work and how it can be used in creating non-photorealistic rendering software.
 
 The list below gives a summary of each program:
 
